@@ -25,6 +25,7 @@ public class WikipediaTest extends TestCase {
 
 		this.desiredCapabilities = DesiredCapabilities.firefox();
 		this.desiredCapabilities.setBrowserName("firefox");
+		this.desiredCapabilities.setCapability("marionette", true);
 		this.desiredCapabilities.setPlatform(Platform.XP);
 	}
 
