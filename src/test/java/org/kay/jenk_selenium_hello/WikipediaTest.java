@@ -27,7 +27,7 @@ public class WikipediaTest extends TestCase {
 	}
 
 	// Verify wikipedia
-	public void xtestWikipediaTitle() {
+	public void testWikipediaTitle() {
 
 		WebDriver driver = null;
 		try {
