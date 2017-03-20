@@ -7,7 +7,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import junit.framework.TestCase;
 
-public class WikipediaTests extends TestCase {
+public class WikipediaTest extends TestCase {
 
 	public void setUp() {
 		System.setProperty("webdriver.gecko.driver", "C:\\tech_resources\\geckodriver-v0.15.0-win64\\geckodriver.exe");
