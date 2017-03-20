@@ -51,7 +51,7 @@ public class WikipediaTest extends TestCase {
 		System.out.println(pageTitle);
 		assertEquals(pageTitle, "Wikipedia, the free encyclopedia");
 
-		driver.close();
+		driver.quit();
 	}
 
 	// Empty test
