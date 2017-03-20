@@ -20,6 +20,8 @@ public class WikipediaTest extends TestCase {
 	public void setUp() {
 		System.setProperty("webdriver.gecko.driver", "C:\\tech_resources\\geckodriver-v0.15.0-win64\\geckodriver.exe");
 		System.setProperty("webdriver.chrome.driver", "C:\\tech_resources\\chromedriver_win32\\chromedriver.exe");
+		String geckoDriverLocation = System.getProperty("webdriver.gecko.driver");
+		System.out.println("geckoDriverLocation: " + geckoDriverLocation);
 
 		this.desiredCapabilities = DesiredCapabilities.firefox();
 		this.desiredCapabilities.setBrowserName("firefox");
@@ -28,6 +30,10 @@ public class WikipediaTest extends TestCase {
 
 	// Verify wikipedia
 	public void testWikipediaTitle() {
+
+		this.desiredCapabilities = DesiredCapabilities.firefox();
+		this.desiredCapabilities.setBrowserName("firefox");
+		this.desiredCapabilities.setPlatform(Platform.XP);
 
 		WebDriver driver = null;
 		try {
