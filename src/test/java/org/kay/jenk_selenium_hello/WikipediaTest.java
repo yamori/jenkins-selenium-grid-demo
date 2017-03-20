@@ -37,7 +37,7 @@ public class WikipediaTest extends TestCase {
 
 		WebDriver driver = null;
 		try {
-			System.out.println("geckoDriverLocation: " + geckoDriverLocation);
+			System.out.println("geckoDriverLocation: " + System.getProperty("webdriver.gecko.driver"));
 			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), this.desiredCapabilities);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
