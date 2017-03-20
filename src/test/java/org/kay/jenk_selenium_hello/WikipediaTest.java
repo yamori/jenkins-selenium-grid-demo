@@ -22,14 +22,14 @@ public class WikipediaTest extends TestCase {
 		System.setProperty("webdriver.chrome.driver", "C:\\tech_resources\\chromedriver_win32\\chromedriver.exe");
 		System.setProperty("webdriver.ie.driver", "C:\\tech_resources\\IEDriverServer_Win32_3.3.0\\IEDriverServer.exe");
 
-		this.desiredCapabilities = DesiredCapabilities.firefox();
-		this.desiredCapabilities.setBrowserName("firefox");
-		this.desiredCapabilities.setCapability("marionette", true);
-		this.desiredCapabilities.setPlatform(Platform.XP);
-		
-//		this.desiredCapabilities = DesiredCapabilities.internetExplorer();
-//		this.desiredCapabilities.setBrowserName("internet explorer");
+//		this.desiredCapabilities = DesiredCapabilities.firefox();
+//		this.desiredCapabilities.setBrowserName("firefox");
+//		this.desiredCapabilities.setCapability("marionette", true);
 //		this.desiredCapabilities.setPlatform(Platform.XP);
+		
+		this.desiredCapabilities = DesiredCapabilities.internetExplorer();
+		this.desiredCapabilities.setBrowserName("internet explorer");
+		this.desiredCapabilities.setPlatform(Platform.XP);
 	}
 
 	// Verify wikipedia
