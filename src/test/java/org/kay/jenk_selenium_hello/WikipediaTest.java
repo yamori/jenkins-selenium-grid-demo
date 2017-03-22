@@ -22,15 +22,18 @@ public class WikipediaTest extends TestCase {
 		String pageTitle = driver.getTitle();
 		System.out.println(pageTitle);
 		assertEquals(pageTitle, "Wikipedia, the free encyclopedia");
-		
-		
+
+		// WebDriverWait wait = new WebDriverWait(driver, 30);
+		// wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("searchInput")));
+		// wait.until(ExpectedConditions.
+		// visibilityOfElementLocated(By.id("searchInput")));
+
 		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("searchInput")));
-		
+		wait.until(ExpectedConditions.jsReturnsValue("return document.readyState==\"complete\";"));
+
 		driver.findElement(By.id("searchInput")).sendKeys("Java");
 		driver.findElement(By.id("searchInput")).sendKeys(Keys.RETURN);
-		
-		
+
 		pageTitle = driver.getTitle();
 		System.out.println(pageTitle);
 		assertEquals(pageTitle, "Java - Wikipedia");
