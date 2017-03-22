@@ -31,15 +31,17 @@ public class WikipediaTest extends TestCase {
 //		WebDriverWait wait = new WebDriverWait(driver, 30);
 //		wait.until(ExpectedConditions.jsReturnsValue("return document.readyState==\"complete\";"));
 		
-		try {
-			Thread.sleep(20000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			Thread.sleep(20000);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 
-		driver.findElement(By.id("searchInput")).sendKeys("Java");
-		driver.findElement(By.id("searchInput")).sendKeys(Keys.RETURN);
+//		driver.findElement(By.id("searchInput")).sendKeys("Java");
+//		driver.findElement(By.id("searchInput")).sendKeys(Keys.RETURN);
+		
+		driver.findElement(By.linkText("History")).click();
 
 		pageTitle = driver.getTitle();
 		System.out.println(pageTitle);
