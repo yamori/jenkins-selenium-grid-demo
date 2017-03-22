@@ -28,8 +28,15 @@ public class WikipediaTest extends TestCase {
 		// wait.until(ExpectedConditions.
 		// visibilityOfElementLocated(By.id("searchInput")));
 
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.jsReturnsValue("return document.readyState==\"complete\";"));
+//		WebDriverWait wait = new WebDriverWait(driver, 30);
+//		wait.until(ExpectedConditions.jsReturnsValue("return document.readyState==\"complete\";"));
+		
+		try {
+			Thread.sleep(20000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		driver.findElement(By.id("searchInput")).sendKeys("Java");
 		driver.findElement(By.id("searchInput")).sendKeys(Keys.RETURN);
