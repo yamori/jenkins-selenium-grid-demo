@@ -38,14 +38,20 @@ public class WikipediaTest extends TestCase {
 //			e.printStackTrace();
 //		}
 
-//		driver.findElement(By.id("searchInput")).sendKeys("Java");
-//		driver.findElement(By.id("searchInput")).sendKeys(Keys.RETURN);
+		driver.findElement(By.id("searchInput")).sendKeys("Java");
+		driver.findElement(By.id("searchInput")).sendKeys(Keys.RETURN);
 		
-		driver.findElement(By.linkText("History")).click();
-
 		pageTitle = driver.getTitle();
 		System.out.println(pageTitle);
 		assertEquals(pageTitle, "Java - Wikipedia");
+		
+//		driver.findElement(By.linkText("History")).click();
+//		
+//		pageTitle = driver.getTitle();
+//		System.out.println(pageTitle);
+//		assertEquals(pageTitle, "Portal:History - Wikipedia");
+
+		
 
 		driver.quit();
 	}
