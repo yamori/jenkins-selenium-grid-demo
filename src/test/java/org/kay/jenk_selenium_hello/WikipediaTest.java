@@ -24,7 +24,7 @@ public class WikipediaTest extends TestCase {
 		assertEquals(pageTitle, "Wikipedia, the free encyclopedia");
 		
 		
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("searchInput")));
 		
 		driver.findElement(By.id("searchInput")).sendKeys("Java");
