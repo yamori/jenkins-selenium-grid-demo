@@ -44,8 +44,18 @@ public class WebDriverSupport {
 			driver = new ChromeDriver();
 		} else {
 			// Remote web driver (and assumed that Selenium Grid-Hub is ready)
-			desiredCapabilities = DesiredCapabilities.internetExplorer();
-			desiredCapabilities.setBrowserName("internet explorer");
+			
+//			desiredCapabilities = DesiredCapabilities.internetExplorer();
+//			desiredCapabilities.setBrowserName("internet explorer");
+//			desiredCapabilities.setPlatform(Platform.XP);
+//			try {
+//				driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), desiredCapabilities);
+//			} catch (MalformedURLException e) {
+//				e.printStackTrace();
+//			}
+			
+			desiredCapabilities = DesiredCapabilities.firefox();
+			desiredCapabilities.setBrowserName("firefox");
 			desiredCapabilities.setPlatform(Platform.XP);
 			try {
 				driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), desiredCapabilities);
