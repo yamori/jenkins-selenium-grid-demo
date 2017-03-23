@@ -24,22 +24,8 @@ public class WikipediaTest {
 		System.out.println(pageTitle);
 		Assert.assertEquals(pageTitle, "Wikipedia, the free encyclopedia");
 
-		// WebDriverWait wait = new WebDriverWait(driver, 30);
-		// wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("searchInput")));
-		// wait.until(ExpectedConditions.
-		// visibilityOfElementLocated(By.id("searchInput")));
-
-		// WebDriverWait wait = new WebDriverWait(driver, 30);
-		// wait.until(ExpectedConditions.jsReturnsValue("return document.readyState==\"complete\";"));
-
-		// try {
-		// Thread.sleep(20000);
-		// } catch (InterruptedException e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// }
-
 		String queryString = "Java";
+		String targetPageTitle = queryString + " - Wikipedia";
 		driver.findElement(By.id("searchInput")).sendKeys(queryString);
 		driver.findElement(By.id("searchInput")).sendKeys(Keys.RETURN);
 
@@ -47,10 +33,21 @@ public class WikipediaTest {
 		wait.until(ExpectedConditions.titleContains(queryString));
 
 		pageTitle = driver.getTitle();
+		if (pageTitle.compareToIgnoreCase(targetPageTitle) != 0) {
+			// Sometimes wikipedia returns the "search results page" instead"
+			driver.get("https://en.wikipedia.org/wiki/" + queryString);
+		}
+
+		wait = new WebDriverWait(driver, 15);
+		wait.until(ExpectedConditions.titleContains(queryString));
+
+		pageTitle = driver.getTitle();
 		System.out.println(pageTitle);
-		Assert.assertEquals(pageTitle, queryString + " - Wikipedia");
+		Assert.assertEquals(pageTitle, targetPageTitle);
+		// //////////////////////////////////////////////////////////////////////////////
 
 		queryString = "Rome";
+		targetPageTitle = queryString + " - Wikipedia";
 		driver.findElement(By.id("searchInput")).sendKeys(queryString);
 		driver.findElement(By.id("searchInput")).sendKeys(Keys.RETURN);
 
@@ -58,10 +55,21 @@ public class WikipediaTest {
 		wait.until(ExpectedConditions.titleContains(queryString));
 
 		pageTitle = driver.getTitle();
+		if (pageTitle.compareToIgnoreCase(targetPageTitle) != 0) {
+			// Sometimes wikipedia returns the "search results page" instead"
+			driver.get("https://en.wikipedia.org/wiki/" + queryString);
+		}
+
+		wait = new WebDriverWait(driver, 15);
+		wait.until(ExpectedConditions.titleContains(queryString));
+
+		pageTitle = driver.getTitle();
 		System.out.println(pageTitle);
-		Assert.assertEquals(pageTitle, queryString + " - Wikipedia");
+		Assert.assertEquals(pageTitle, targetPageTitle);
+		// //////////////////////////////////////////////////////////////////////////////
 
 		queryString = "Calculus";
+		targetPageTitle = queryString + " - Wikipedia";
 		driver.findElement(By.id("searchInput")).sendKeys(queryString);
 		driver.findElement(By.id("searchInput")).sendKeys(Keys.RETURN);
 
@@ -69,14 +77,18 @@ public class WikipediaTest {
 		wait.until(ExpectedConditions.titleContains(queryString));
 
 		pageTitle = driver.getTitle();
-		System.out.println(pageTitle);
-		Assert.assertEquals(pageTitle, queryString + " - Wikipedia");
+		if (pageTitle.compareToIgnoreCase(targetPageTitle) != 0) {
+			// Sometimes wikipedia returns the "search results page" instead"
+			driver.get("https://en.wikipedia.org/wiki/" + queryString);
+		}
 
-		// driver.findElement(By.linkText("History")).click();
-		//
-		// pageTitle = driver.getTitle();
-		// System.out.println(pageTitle);
-		// assertEquals(pageTitle, "Portal:History - Wikipedia");
+		wait = new WebDriverWait(driver, 15);
+		wait.until(ExpectedConditions.titleContains(queryString));
+
+		pageTitle = driver.getTitle();
+		System.out.println(pageTitle);
+		Assert.assertEquals(pageTitle, targetPageTitle);
+		// //////////////////////////////////////////////////////////////////////////////
 
 		driverSupport.closeWebDriver(driver);
 	}
