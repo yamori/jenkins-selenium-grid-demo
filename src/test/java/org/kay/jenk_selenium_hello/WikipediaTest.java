@@ -55,8 +55,7 @@ public class WikipediaTest {
 		// System.out.println(pageTitle);
 		// assertEquals(pageTitle, "Portal:History - Wikipedia");
 
-		driver.close();
-		driver.quit();
+		driverSupport.closeWebDriver(driver);
 	}
 
 	// Empty test
