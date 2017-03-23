@@ -41,6 +41,9 @@ public class WikipediaTest {
 
 		driver.findElement(By.id("searchInput")).sendKeys("Java");
 		driver.findElement(By.id("searchInput")).sendKeys(Keys.RETURN);
+		
+		WebDriverWait wait = new WebDriverWait(driver, 15);
+		wait.until(ExpectedConditions.titleContains("Java"));
 
 		pageTitle = driver.getTitle();
 		System.out.println(pageTitle);
@@ -52,6 +55,7 @@ public class WikipediaTest {
 		// System.out.println(pageTitle);
 		// assertEquals(pageTitle, "Portal:History - Wikipedia");
 
+		driver.close();
 		driver.quit();
 	}
 
