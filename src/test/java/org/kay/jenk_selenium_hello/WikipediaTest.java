@@ -39,15 +39,42 @@ public class WikipediaTest {
 		// e.printStackTrace();
 		// }
 
-		driver.findElement(By.id("searchInput")).sendKeys("Java");
+		String queryString = "Java";
+		driver.findElement(By.id("searchInput")).sendKeys(queryString);
 		driver.findElement(By.id("searchInput")).sendKeys(Keys.RETURN);
 		
 		WebDriverWait wait = new WebDriverWait(driver, 15);
-		wait.until(ExpectedConditions.titleContains("Java"));
+		wait.until(ExpectedConditions.titleContains(queryString));
 
 		pageTitle = driver.getTitle();
 		System.out.println(pageTitle);
-		Assert.assertEquals(pageTitle, "Java - Wikipedia");
+		Assert.assertEquals(pageTitle, queryString + " - Wikipedia");
+
+		
+		
+		queryString = "Rome";
+		driver.findElement(By.id("searchInput")).sendKeys(queryString);
+		driver.findElement(By.id("searchInput")).sendKeys(Keys.RETURN);
+		
+		wait = new WebDriverWait(driver, 15);
+		wait.until(ExpectedConditions.titleContains(queryString));
+
+		pageTitle = driver.getTitle();
+		System.out.println(pageTitle);
+		Assert.assertEquals(pageTitle, queryString + " - Wikipedia");
+		
+		
+		
+		queryString = "Calculus";
+		driver.findElement(By.id("searchInput")).sendKeys(queryString);
+		driver.findElement(By.id("searchInput")).sendKeys(Keys.RETURN);
+		
+		wait = new WebDriverWait(driver, 15);
+		wait.until(ExpectedConditions.titleContains(queryString));
+
+		pageTitle = driver.getTitle();
+		System.out.println(pageTitle);
+		Assert.assertEquals(pageTitle, queryString + " - Wikipedia");
 
 		// driver.findElement(By.linkText("History")).click();
 		//
