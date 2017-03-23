@@ -77,7 +77,7 @@ public class WebDriverSupport {
 		if (isMyLaptop()) {
 			driver.quit();
 		} else {
-			driver.close();
+			driver.quit();
 		}
 	}
 
