@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class WikipediaTest {
+public class WikipediaTestDup {
 
 	// Verify wikipedia
 	@Test
@@ -91,12 +91,6 @@ public class WikipediaTest {
 		// //////////////////////////////////////////////////////////////////////////////
 
 		driverSupport.closeWebDriver(driver);
-	}
-
-	// Empty test
-	@Test
-	public void testEmptyTest() {
-		Assert.assertTrue(true);
 	}
 
 }

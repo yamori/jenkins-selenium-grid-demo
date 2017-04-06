@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="Suite1" verbose="1" parallel="classes" thread-count="2">
+  <test name="Regression1">
+    <classes>
+      <class name="org.kay.jenk_selenium_hello.SimpleTest"/>
+      <class name="org.kay.jenk_selenium_hello.WikipediaTest"/>
+      <class name="org.kay.jenk_selenium_hello.WikipediaTestDup"/>
+    </classes>
+  </test>
+</suite>
