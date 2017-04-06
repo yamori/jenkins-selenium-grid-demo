@@ -12,6 +12,9 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<defaultTestNGSuiteXmlFile>testng.xml</defaultTestNGSuiteXmlFile>
+		<testNGSuiteXmlFile>${defaultTestNGSuiteXmlFile}</testNGSuiteXmlFile>
 	</properties>
 
 	<dependencies>
@@ -38,7 +41,7 @@
 				<version>2.19.1</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>testng.xml</suiteXmlFile>
+						<suiteXmlFile>${testNGSuiteXmlFile}</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
